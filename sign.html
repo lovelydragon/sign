@@ -1,0 +1,124 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+  </head>
+  <body>
+    <div>
+      <table border="1">
+        <tr>
+          <td rowspan="2">App1</td>
+          <td>第一天</td>
+          <td>第二天</td>
+          <td>第三天</td>
+          <td>第四天</td>
+          <td>第五天</td>
+          <td>第六天</td>
+          <td>第七天</td>
+        </tr>
+        <tr>
+          <td><button id = "app1-1" onclick="app1Sign('app1-1','app1-2',1)">签到</button></td>
+          <td><button id = "app1-2" style="display:none;" onclick="app1Sign('app1-2','app1-3',2)">签到</button></td>
+          <td><button id = "app1-3" style="display:none;" onclick="app1Sign('app1-3','app1-4',3)">签到</button></td>
+          <td><button id = "app1-4" style="display:none;" onclick="app1Sign('app1-4','app1-5',4)">签到</button></td>
+          <td><button id = "app1-5" style="display:none;" onclick="app1Sign('app1-5','app1-6',5)">签到</button></td>
+          <td><button id = "app1-6" style="display:none;" onclick="app1Sign('app1-6','app1-7',6)">签到</button></td>
+          <td><button id = "app1-7" style="display:none;" onclick="app1Sign('app1-7','text1',7)">签到</button></td>
+        </tr>
+      </table>
+    </div>
+    <textarea readonly wrap="soft" cols="50" rows="3" id="text1" style="display:none;">
+      第一天至第七天签到积分依次为：1,2,3,4,5,6,7；七天为一个签到周期，第八天按第一天计算，积1积分。
+    </textarea>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <hr/>
+    <div>
+      <table border="1">
+        <tr>
+          <td rowspan="2">App2</td>
+          <td>第一天</td>
+          <td>第二天</td>
+          <td>第三天</td>
+          <td>第四天</td>
+          <td>第五天</td>
+          <td>第六天</td>
+          <td>第七天</td>
+        </tr>
+        <tr>
+          <td><button id = "app2-1" onclick="app2Sign('app2-1','app2-2')">签到</button></td>
+          <td><button id = "app2-2" style="display:none;" onclick="app2Sign('app2-2','app2-3')">签到</button></td>
+          <td><button id = "app2-3" style="display:none;" onclick="app2Sign('app2-3','app2-4')">签到</button></td>
+          <td><button id = "app2-4" style="display:none;" onclick="app2Sign('app2-4','app2-5')">签到</button></td>
+          <td><button id = "app2-5" style="display:none;" onclick="app2Sign('app2-5','app2-6')">签到</button></td>
+          <td><button id = "app2-6" style="display:none;" onclick="app2Sign('app2-6','app2-7')">签到</button></td>
+          <td><button id = "app2-7" style="display:none;" onclick="app2Sign('app2-7','text2')">签到</button></td>
+        </tr>
+      </table>
+    </div>
+    <textarea readonly wrap="soft" cols="50" rows="3" id="text2" style="display:none;">
+      每天签到都是积4积分。
+    </textarea>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <hr/>
+      <table border="1">
+        <tr>
+          <td rowspan="2">App3</td>
+          <td>第一天</td>
+          <td>第二天</td>
+          <td>第三天</td>
+          <td>第四天</td>
+          <td>第五天</td>
+          <td>第六天</td>
+          <td>第七天</td>
+        </tr>
+        <tr>
+          <td><button id = "app3-1" onclick="app3Sign('app3-1','app3-2',0)">签到</button></td>
+          <td><button id = "app3-2" style="display:none;" onclick="app3Sign('app3-2','app3-3',1)">签到</button></td>
+          <td><button id = "app3-3" style="display:none;" onclick="app3Sign('app3-3','app3-4',2)">签到</button></td>
+          <td><button id = "app3-4" style="display:none;" onclick="app3Sign('app3-4','app3-5',3)">签到</button></td>
+          <td><button id = "app3-5" style="display:none;" onclick="app3Sign('app3-5','app3-6',4)">签到</button></td>
+          <td><button id = "app3-6" style="display:none;" onclick="app3Sign('app3-6','app3-7',5)">签到</button></td>
+          <td><button id = "app3-7" style="display:none;" onclick="app3Sign('app3-7','text3',6)">签到</button></td>
+        </tr>
+      </table>
+      <textarea readonly wrap="soft" cols="50" rows="3" id="text3"  style="display:none;">
+      第一天至第7天签到积分为：不重复的1-7随机数；七天为一个签到周期，第八天按照第一天计算
+      </textarea>
+    </div>
+    <hr/>
+    <script type="text/javascript">
+      function display(y){$(y).style.display=($(y).style.display=="none")?"":"none";}
+      function $(s){return document.getElementById(s);}
+      function app1Sign(id,id2,day){
+        $(id).innerHTML = day + "积分"
+        display(id2)
+      }
+      function app2Sign(id,id2){
+        $(id).innerHTML = "4积分"
+        display(id2)
+      }
+      Array.prototype.shuffle = function() {
+        let array = this;
+        let len = array.length;
+        for (let i = len - 1; i > 0; i--) {
+          let j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]];
+        }
+      }
+      var array = new Array(1,2,3,4,5,6,7)
+      array.shuffle()
+      console.log(array); 
+      function app3Sign(id,id2,day){
+        $(id).innerHTML = array[day] + "积分"
+        display(id2)
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+  </head>
+  <body>
+    <div align = "center" >
+      <button  id = "button" onclick="random()">µã»÷</button>
+      <h1><text id = "t1" style="display:none;"></text></h1>
+    </div>
+    <script type="text/javascript">
+      function display(y){$(y).style.display=($(y).style.display=="none")?"":"none";}
+      function $(s){return document.getElementById(s);}
+      function random(){
+          var min = 1
+          var max = 6
+          var res = Math.floor(min + Math.random()*(max - min + 1))
+          display('button')
+          display('t1')
+          $('t1').innerText =  res
+      }
+    </script>
+    <style type="text/css">
+        div
+        {
+            width: 400px;
+            height: 150px;
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+        }
+        #button{
+            width: 150px;
+            height: 150px;
+        }
+        #t1{
+            width: 150px;
+            height: 150px;
+        }
+    </style>
+  </body>
+</html>

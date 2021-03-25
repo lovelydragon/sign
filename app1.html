@@ -1,0 +1,79 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+  </head>
+  <body>
+    <div align = "center" >
+      <table border="1">
+        <tr>
+          <td rowspan="2">App1</td>
+          <td>第一天</td>
+          <td>第二天</td>
+          <td>第三天</td>
+          <td>第四天</td>
+          <td>第五天</td>
+          <td>第六天</td>
+          <td>第七天</td>
+        </tr>
+        <tr>
+            <td><button id = "app1-1" onclick="app1Sign('app1-1','app1-2','t1')">签到</button>
+                <text id = "t1" style="display:none;">1积分</text></td>
+            <td><button id = "app1-2" style="display:none;" onclick="app1Sign('app1-2','app1-3','t2')">签到</button>
+                <text id = "t2" style="display:none;">2积分</text></td>
+            <td><button id = "app1-3" style="display:none;" onclick="app1Sign('app1-3','app1-4','t3')">签到</button>
+                <text id = "t3" style="display:none;">3积分</text></td>
+            <td><button id = "app1-4" style="display:none;" onclick="app1Sign('app1-4','app1-5','t4')">签到</button>
+                <text id = "t4" style="display:none;">4积分</text></td>
+            <td><button id = "app1-5" style="display:none;" onclick="app1Sign('app1-5','app1-6','t5')">签到</button>
+                <text id = "t5" style="display:none;">5积分</text></td>
+            <td><button id = "app1-6" style="display:none;" onclick="app1Sign('app1-6','app1-7','t6')">签到</button>
+                <text id = "t6" style="display:none;">6积分</text></td>
+            <td><button id = "app1-7" style="display:none;" onclick="app1Sign('app1-7','text1','t7')">签到</button>
+                <text id = "t7" style="display:none;">7积分</text></td>
+        </tr>
+      </table>
+      <text readonly wrap="soft" cols="50" rows="3" id="text1" style="display:none;">
+        第一天至第七天签到积分依次为：1,2,3,4,5,6,7；七天为一个签到周期，第八天按第一天计算，积1积分。
+      </text>
+    </div>
+    <script type="text/javascript">
+      function display(y){$(y).style.display=($(y).style.display=="none")?"":"none";}
+      function $(s){return document.getElementById(s);}
+      function app1Sign(id,id2,id3){
+        display(id)
+        display(id3)
+        display(id2)
+      }
+      function app2Sign(id,id2){
+        $(id).innerHTML = "4积分"
+        display(id2)
+      }
+      Array.prototype.shuffle = function() {
+        let array = this;
+        let len = array.length;
+        for (let i = len - 1; i > 0; i--) {
+          let j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]];
+        }
+      }
+      var array = new Array(1,2,3,4,5,6,7)
+      array.shuffle()
+      console.log(array); 
+      function app3Sign(id,id2,day){
+        $(id).innerHTML = array[day] + "积分"
+        display(id2)
+      }
+    </script>
+    <style type="text/css">
+        div
+        {
+            width: 400px;
+            height: 150px;
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+        }
+    </style>
+  </body>
+</html>
