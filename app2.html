@@ -7,40 +7,40 @@
       <table border="1">
         <tr>
           <td rowspan="2">App2</td>
-          <td>µÚÒ»Ìì</td>
-          <td>µÚ¶şÌì</td>
-          <td>µÚÈıÌì</td>
-          <td>µÚËÄÌì</td>
-          <td>µÚÎåÌì</td>
-          <td>µÚÁùÌì</td>
-          <td>µÚÆßÌì</td>
+          <td>ç¬¬ä¸€å¤©</td>
+          <td>ç¬¬äºŒå¤©</td>
+          <td>ç¬¬ä¸‰å¤©</td>
+          <td>ç¬¬å››å¤©</td>
+          <td>ç¬¬äº”å¤©</td>
+          <td>ç¬¬å…­å¤©</td>
+          <td>ç¬¬ä¸ƒå¤©</td>
         </tr>
         <tr>
-          <td><button id = "app2-1" onclick="app2Sign('app2-1','app2-2','t1')">Ç©µ½</button>
-            <text id = "t1" style="display:none;">4»ı·Ö</text></td>
-          <td><button id = "app2-2" style="display:none;" onclick="app2Sign('app2-2','app2-3','t2')">Ç©µ½</button>
-            <text id = "t2" style="display:none;">4»ı·Ö</text></td>
-          <td><button id = "app2-3" style="display:none;" onclick="app2Sign('app2-3','app2-4','t3')">Ç©µ½</button>
-            <text id = "t3" style="display:none;">4»ı·Ö</text></td>
-          <td><button id = "app2-4" style="display:none;" onclick="app2Sign('app2-4','app2-5','t4')">Ç©µ½</button>
-            <text id = "t4" style="display:none;">4»ı·Ö</text></td>
-          <td><button id = "app2-5" style="display:none;" onclick="app2Sign('app2-5','app2-6','t5')">Ç©µ½</button>
-            <text id = "t5" style="display:none;">4»ı·Ö</text></td>
-          <td><button id = "app2-6" style="display:none;" onclick="app2Sign('app2-6','app2-7','t6')">Ç©µ½</button>
-            <text id = "t6" style="display:none;">4»ı·Ö</text></td>
-          <td><button id = "app2-7" style="display:none;" onclick="app2Sign('app2-7','text2','t7')">Ç©µ½</button>
-            <text id = "t7" style="display:none;">4»ı·Ö</text></td>
+          <td><button id = "app2-1" onclick="app2Sign('app2-1','app2-2','t1')">ç­¾åˆ°</button>
+            <text id = "t1" style="display:none;">4ç§¯åˆ†</text></td>
+          <td><button id = "app2-2" style="display:none;" onclick="app2Sign('app2-2','app2-3','t2')">ç­¾åˆ°</button>
+            <text id = "t2" style="display:none;">4ç§¯åˆ†</text></td>
+          <td><button id = "app2-3" style="display:none;" onclick="app2Sign('app2-3','app2-4','t3')">ç­¾åˆ°</button>
+            <text id = "t3" style="display:none;">4ç§¯åˆ†</text></td>
+          <td><button id = "app2-4" style="display:none;" onclick="app2Sign('app2-4','app2-5','t4')">ç­¾åˆ°</button>
+            <text id = "t4" style="display:none;">4ç§¯åˆ†</text></td>
+          <td><button id = "app2-5" style="display:none;" onclick="app2Sign('app2-5','app2-6','t5')">ç­¾åˆ°</button>
+            <text id = "t5" style="display:none;">4ç§¯åˆ†</text></td>
+          <td><button id = "app2-6" style="display:none;" onclick="app2Sign('app2-6','app2-7','t6')">ç­¾åˆ°</button>
+            <text id = "t6" style="display:none;">4ç§¯åˆ†</text></td>
+          <td><button id = "app2-7" style="display:none;" onclick="app2Sign('app2-7','text2','t7')">ç­¾åˆ°</button>
+            <text id = "t7" style="display:none;">4ç§¯åˆ†</text></td>
         </tr>
       </table>
       <text readonly wrap="soft" cols="50" rows="3" id="text2" style="display:none;">
-        Ã¿ÌìÇ©µ½¶¼ÊÇ»ı4»ı·Ö¡£
+        æ¯å¤©ç­¾åˆ°éƒ½æ˜¯ç§¯4ç§¯åˆ†ã€‚
       </text>
     </div>
     <script type="text/javascript">
       function display(y){$(y).style.display=($(y).style.display=="none")?"":"none";}
       function $(s){return document.getElementById(s);}
       function app1Sign(id,id2,day){
-        $(id).innerHTML = day + "»ı·Ö"
+        $(id).innerHTML = day + "ç§¯åˆ†"
         display(id2)
       }
       function app2Sign(id,id2,id3){
@@ -60,7 +60,7 @@
       array.shuffle()
       console.log(array); 
       function app3Sign(id,id2,day){
-        $(id).innerHTML = array[day] + "»ı·Ö"
+        $(id).innerHTML = array[day] + "ç§¯åˆ†"
         display(id2)
       }
     </script>
